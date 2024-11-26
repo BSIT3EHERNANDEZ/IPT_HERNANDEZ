@@ -14,12 +14,12 @@ body {
 .pagebanner {
     width: 100%;
     height: 500px;
-    background-image: url('../images/banner.jpg');
+    background-image: url('../docs/images/banner.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
+    background-color: red; /* fallback color */
 }
-
 .bannertext
 {
     width: 70%;
