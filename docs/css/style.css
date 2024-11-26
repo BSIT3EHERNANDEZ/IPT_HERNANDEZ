@@ -371,7 +371,7 @@ body {
 .pagebanner-contactme {
     width: 100%;
     height: 500px;
-    background-image: url('/docs/images/COVER.jpg');
+    background-image: url('https://raw.githubusercontent.com/BSIT3EHERNANDEZ/portfolio/main/docs/images/banner.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -381,7 +381,7 @@ body {
 .pagebanner-aboutme {
     width: 100%;
     height: 550px;
-    background-image: url('/docs/images/COVER.jpg');
+    background-image: url('https://raw.githubusercontent.com/BSIT3EHERNANDEZ/portfolio/main/docs/images/banner.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
