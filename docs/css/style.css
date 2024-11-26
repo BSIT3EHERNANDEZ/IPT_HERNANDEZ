@@ -1,0 +1,1268 @@
+/* Start of gallery.css */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.pagebanner {
+    width: 100%;
+    height: 500px;
+    background-image: url('/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.bannertext
+{
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.banner-textcontainer
+{
+    width: 100%;
+    margin-top: 100px;
+    padding-top: 20px;
+}
+
+.greetings-title
+{
+    width: 60%;
+    text-align: center;
+    background-color: red;
+    margin: auto;
+    padding: 10px;
+}
+
+.greetings-title span
+{
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.upper-title
+{
+    width: 100%;
+}
+
+.upper-title h1
+{
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: 50pt;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.sub-title
+{
+    width: 100%;
+    text-align: center;
+}
+
+.sub-title span
+{
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    font-family: arial;
+}
+
+
+.navpart
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.nav-logo
+{
+    width: 30%;
+    cursor: pointer;
+}
+
+.nav-link
+{
+    width: 70%;
+    height: 60px;
+}
+
+li{
+    height: 30px;
+    text-align: center;
+    line-height: 25pt;
+    border-radius: 4px;
+    list-style-type: none;
+    transition: margin-top .2s;
+    cursor: pointer;
+
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+}
+
+li:hover
+{
+    margin-top: -5px;
+
+}
+
+nav{
+
+    float: right;
+
+}
+
+nav ul li
+{
+    float: left;
+    padding-right: 30px;
+    font-size: 10pt;
+    display: inline-block;
+}
+
+.icon
+{
+    float: right;
+    cursor: pointer;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*END OF BANNER*/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section styles */
+section {
+    margin: 40px 0;
+}
+
+/* Gallery styles */
+
+.container h2{
+    font-family: sans-serif;
+      color: #333;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 350px; /* Set a fixed height for uniform size */
+    object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Graphic Design Section Styling */
+#graphicDesign {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#graphicDesign h2 {
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#graphicDesign .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusts layout responsively */
+    gap: 15px;
+    justify-content: center;
+    padding: 0;
+}
+
+#graphicDesign .gallery-item-GD, 
+#graphicDesign .gallery-item {
+    position: relative;
+    width: 100%; /* Ensures the item takes the full width of its grid cell */
+    overflow: hidden;
+    border-radius: 5px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds depth */
+}
+
+#graphicDesign .gallery-item-GD img, 
+#graphicDesign .gallery-item img {
+    width: 100%; /* Image takes full width of container */
+    height: 250px; /* Fixed height to create a landscape aspect ratio */
+    object-fit: cover; /* Ensures the image fits the container without distortion */
+    transition: transform 0.3s ease-in-out; /* Adds a hover effect */
+}
+
+#graphicDesign .gallery-item-GD img:hover, 
+#graphicDesign .gallery-item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for effect */
+}
+
+/* End of gallery.css */
+
+
+
+
+
+
+
+
+
+
+
+/* Start of modal-style.css */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.3); /* Lighter background */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto; /* Smaller margin for compact design */
+  padding: 25px;
+  border-radius: 8px;
+  width: 90%; /* Reduced width for minimal look */
+  max-width: 400px; /* Maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content .model-title{
+    color: black;
+    font-size: 16pt;
+    margin-bottom: 20px;
+    font-family: arial;
+    text-decoration: center;
+}
+/* Close Button */
+.close-btn {
+  color: #888;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  color: red;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: gray;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+input, textarea {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: maroon;
+}
+
+/* Smooth transition for modal appearance */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* End of modal-style.css */
+
+
+
+
+
+
+
+
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.pagebanner {
+    width: 100%;
+    height: 500px;
+    background-image: url('/docs/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.pagebanner-contactme {
+    width: 100%;
+    height: 500px;
+    background-image: url('/docs/images/COVER.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.pagebanner-aboutme {
+    width: 100%;
+    height: 550px;
+    background-image: url('/docs/images/COVER.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.bannertext
+{
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.banner-textcontainer
+{
+    width: 100%;
+    margin-top: 100px;
+    padding-top: 20px;
+}
+
+.greetings-title
+{
+    width: 60%;
+    text-align: center;
+    background-color: red;
+    margin: auto;
+    padding: 10px;
+}
+
+.greetings-title span
+{
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.upper-title
+{
+    width: 100%;
+}
+
+.upper-title h1
+{
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: 50pt;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.sub-title
+{
+    width: 100%;
+    text-align: center;
+}
+
+.sub-title span
+{
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    font-family: arial;
+}
+
+
+.navpart
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.nav-logo
+{
+    width: 30%;
+    cursor: pointer;
+}
+
+.nav-link
+{
+    width: 70%;
+    height: 60px;
+}
+
+li{
+    height: 30px;
+    text-align: center;
+    line-height: 25pt;
+    border-radius: 4px;
+    list-style-type: none;
+    transition: margin-top .2s;
+    cursor: pointer;
+
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+}
+
+li:hover
+{
+    margin-top: -5px;
+
+}
+
+nav{
+
+    float: right;
+
+}
+
+nav ul li
+{
+    float: left;
+    padding-right: 30px;
+    font-size: 10pt;
+    display: inline-block;
+}
+
+.icon
+{
+    float: right;
+    cursor: pointer;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*END OF BANNER*/
+
+.content{
+    width: 100%;
+}
+
+.about-me{
+    width: 80%;
+    margin: auto;
+}
+
+.about-me h3{
+    padding-top: 60px;
+    margin: 0;
+    text-align: center;
+    font-family: century gothic;
+    font-size: 25pt;
+    color: #101010;
+}
+
+.about-me p{
+    text-align: center;
+    font-size: 14pt;
+    font-family: en Sans Condensed, HelveticaNeue, Helvetica Neue, sans-serif;
+    margin: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: #101010;
+
+}
+
+.about-service {
+    width: 100%;
+    margin: 0;
+    margin-top: 35px;
+    padding-bottom: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Services Box Style */
+.services-bx {
+    width: 22%;
+    margin: auto;
+}
+
+.service-img {
+    width: 100%;
+}
+
+.service-img img {
+    max-width: 100%;
+}
+
+.service-details{
+    width: 100%;
+    background-color: #101010;
+}
+
+.service-details p{
+    margin: 0;
+    padding: 20px;
+    font-size: 15pt;
+    text-align: inherit;
+    color: white;
+}
+
+.content h2{
+    margin-top: 50px;
+    padding: 0;
+    text-align: center;
+    font-family: century gothic;
+    font-size: 24pt;
+    color: #101010;
+}
+
+.container-featured{
+    width: 100%;
+    background-color: #101010;
+    border-top: solid 20px red;
+    border-bottom: solid 5px red;
+}
+
+    h2{
+        padding: 0;
+        margin: 0;
+    }
+
+ p{
+    padding-top: 10px;
+    margin: 0;
+    text-align: center;
+    font-family: century gothic;
+    font-size: 16pt;
+    color: #101010;
+}
+
+.container-featured h2{
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 24pt;
+    font-family: century gothic;
+}
+
+.container-featured p{
+    color: white;
+    margin-top: 5px;
+
+}
+
+.featuredwoks-box{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    padding-bottom: 60px;
+}
+
+
+.worksimg-bx{
+    width: 22%;
+    margin: auto;
+
+}
+
+.worksimg-bx img{
+    max-width: 100%;
+}
+
+
+.contact-thumb{
+    width: 100%;
+    background-color: #f0f0f0;
+    padding-bottom: 70px;
+}
+
+.contactme-bx{
+    width: 100%;
+    margin: auto;
+    padding: 70px;
+    background-color: white;
+}
+
+ .contact-thumb h1{
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    margin-bottom: 25px;
+    font-family: Open Sans Condensed, HelveticaNeue, Helvetica Neue, sans-serif;
+}
+
+.contactme-bx .question h2{
+    font-weight: 700;
+    margin-top: 15px;
+    font-family: pen Sans Condensed, HelveticaNeue, Helvetica Neue, sans-serif;
+}
+
+ .question a{
+    color: #f44336;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.contactme-bx .question p{
+    text-align: left;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #7d7575;
+    line-height: 35px;
+    font-family: en Sans Condensed, HelveticaNeue, Helvetica Neue, sans-serif;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+/* Container for footer*/
+
+footer{
+    position: relative;
+    padding: 64px 0;
+    background-color: #111;
+}
+
+.row{
+    margin-right: -15px;
+    margin-left: -15px;
+    display: flex;
+}
+
+footer .col-sm-3 h1, footer .col-sm-2 h1 {
+    margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: century gothic;
+}
+
+
+.item-news{
+    width: 150px;
+
+}
+.footer .item-news h1 {
+    margin-bottom: 16px;
+    font-size: 14px;
+    letter-spacing: .2px;
+    color: #888;
+}
+
+.col-sm-3{
+    margin: 0 50px;
+}
+footer .col-sm-3 p {
+    font-size: 12px;
+    color: #888;
+    line-height: 20px;
+    transition: all .3s ease-in-out;
+    font-family: century gothic;
+    text-align: left;
+}
+
+footer .item-news a {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    color: red;
+    letter-spacing: 1px;
+    margin-top: 12px;
+    transition: all .3s ease-in-out;
+}
+
+
+.block-link a{
+    text-align: left;
+    color: white;
+}
+footer .copyright {
+    margin: 50px 0;
+    font-size: 11px;
+    font-weight: 500;
+    color: #888;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: century gothic;
+}
+
+
+footer .btn-top {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.btn-top:hover a{
+    background-color: red;
+    color: white;
+}
+
+footer .btn-top a {
+    display: block;
+    width: 50px;
+    padding: 15px;
+    background-color: gray;
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+/* end of Container for footer*/
+
+
+/* Modal Background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.3); /* Lighter background */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto; /* Smaller margin for compact design */
+  padding: 25px;
+  border-radius: 8px;
+  width: 90%; /* Reduced width for minimal look */
+  max-width: 400px; /* Maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content .model-title{
+    color: black;
+    font-size: 16pt;
+    margin-bottom: 20px;
+    font-family: arial;
+}
+/* Close Button */
+.close-btn {
+  color: #888;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  color: red;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: gray;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+input, textarea {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: maroon;
+}
+
+  .nav-icon {
+        display: none; /* Hidden by default */
+    }
+
+.nav-icon img {
+    fill: white; /* Make the SVG icon white */
+}
+
+/* Smooth transition for modal appearance */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        margin: 0; /* Adjust base font size */
+        padding: 0;
+    }
+
+    .container {
+        width: 90%; /* Use most of the screen width */
+        padding: 10px;
+    }
+
+    .pagebanner, .pagebanner-contactme, .pagebanner-aboutme {
+        height: 300px; /* Reduce banner height */
+    }
+
+    .bannertext {
+        width: 90%;
+        margin-top: 30px; /* Adjust spacing */
+    }
+
+    .greetings-title {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .banner-textcontainer{
+        margin-top: 75px;
+    }
+    .greetings-title span {
+        font-size: 12pt; /* Smaller font */
+    }
+
+    .upper-title h1 {
+        font-size: 28pt; /* Scale down title size */
+    }
+
+    .sub-title span {
+        font-size: 12pt; /* Scale down subtitle */
+    }
+
+    .navpart {
+        flex-direction: column; /* Stack navigation items */
+    }
+
+    .nav-logo, .nav-link {
+        width: 100%; /* Full width navigation */
+    }
+
+    li {
+        font-size: 12pt; /* Adjust font size */
+        padding: 5px; /* Reduce padding */
+    }
+
+    .about-me {
+        width: 100%; /* Use full width */
+    }
+
+    .about-me h3 {
+        font-size: 18pt; /* Reduce font size */
+        margin: 0;
+    }
+
+    .about-me p {
+        font-size: 11pt; /* Scale down paragraph text */
+        line-height: 2; /* Adjust line height */
+    }
+
+    .about-service {
+        flex-direction: column; /* Stack service boxes */
+    }
+
+    .services-bx {
+        width: 75%; /* Reduce box width */
+        margin-bottom: 10px;
+    }
+
+    .container-featured {
+        border-top: solid 10px red; /* Adjust border width */
+        border-bottom: solid 3px red;
+    }
+
+    .container-featured h2{
+        font-size: 18pt;
+    }
+
+    .container-featured p{
+        font-size: 12pt;
+    }
+
+    .featuredwoks-box {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 10px; /* Optional: adds space between items */
+    }
+
+    .worksimg-bx {
+        width: 48%; /* Each image box will take 48% of the row */
+        margin: auto; /* Centers the images */
+    }
+
+    .contactme-bx {
+        padding: 20px; /* Reduce padding */
+    }
+
+    .modal-content {
+        padding: 15px; /* Compact padding */
+    }
+
+    .modal-content .model-title {
+        font-size: 14pt; /* Adjust modal title size */
+    }
+
+     .featuredwoks-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Optional spacing between items */
+    }
+
+    .worksimg-bx {
+        flex: 1 1 48%; /* Each image takes 48% of the row */
+        max-width: 48%; /* Prevents items from stretching */
+        box-sizing: border-box; /* Includes padding/borders in width calculation */
+    }
+
+
+
+     footer .col-sm-3 p {
+    font-size: 12px;
+    color: #888;
+    line-height: 20px;
+    transition: all .3s ease-in-out;
+    font-family: century gothic;
+    text-align: left;
+}
+
+footer .item-news a {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    color: red;
+    letter-spacing: 1px;
+    margin-top: 12px;
+    transition: all .3s ease-in-out;
+}
+
+
+.block-link a{
+    text-align: left;
+    color: white;
+}
+footer .copyright {
+    margin: 50px 0;
+    font-size: 11px;
+    font-weight: 500;
+    color: #888;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: century gothic;
+}
+
+
+footer .btn-top {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.btn-top:hover a{
+    background-color: red;
+    color: white;
+}
+
+footer .btn-top a {
+    display: block;
+    width: 50px;
+    padding: 15px;
+    background-color: gray;
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+
+    footer a#showModalBtn {
+        padding: 10px 15px; /* Adjust padding */
+        font-size: 14px; /* Maintain text size */
+        margin-top: 15px;
+        background-color: red;
+        border-radius: 5px; /* Add rounded corners */
+        color: white; /* Text color */
+    }
+
+    .copyright {
+        margin-top: 20px; /* Add spacing above copyright text */
+        font-size: 12px; /* Adjust font size */
+    }
+    .navpart {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden off-screen initially */
+        width: 250px; /* Fixed menu width */
+        height: 100%; /* Full height for vertical navigation */
+        background: linear-gradient(180deg, #333, #444); /* Stylish background */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        transition: left 0.5s ease; /* Smooth sliding animation */
+        z-index: 1000;
+
+    }
+
+    .navpart:hover {
+        left: 0; /* Slide menu into view */
+    }
+
+    .nav-icon {
+        background-color: white;
+         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        display: block; /* Show toggle icon */
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1001;
+        cursor: pointer;
+        transition: opacity 0.3s ease; /* Smooth fade effect */
+    }
+
+    .nav-icon img {
+        width: 35px;
+        height: 30px;
+        object-fit: contain;
+        filter: invert(1) brightness(0) saturate(100%) contrast(100%);
+    }
+
+    /* Hide the icon when hovering over the menu */
+    .navpart:hover ~ .nav-icon {
+        opacity: 0; /* Smoothly fade out the icon */
+    }
+
+    .nav-link {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .nav-link li {
+        width: 100%; /* Full width for each link */
+        padding: 15px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.2em;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    }
+
+    .nav-link li:hover {
+        background-color: #555; /* Highlight link on hover */
+        transform: scale(1.1); /* Slight zoom */
+    }
+
+    .nav-link a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+     /* Contact Thumb Section */
+    .contact-thumb h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Contact Box */
+    .contactme-bx {
+        padding: 20px;
+    }
+
+    /* Question Sections */
+    .question h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .question p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Adjust padding and margin for better space usage */
+    .contactme-bx section {
+        margin-bottom: 20px;
+    }
+
+    /* Make the "video" section more flexible */
+    .contactme-bx video {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For tablet screens (between 768px and 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Contact Thumb Section */
+    .contact-thumb h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    /* Contact Box */
+    .contactme-bx {
+        padding: 20px;
+    }
+
+    /* Question Sections */
+    .question h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .question p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    video {
+        width: 100%;
+        height: 350px;
+    }
+
+    /* Adjust padding and margin for better space usage */
+    .contactme-bx section {
+        margin-bottom: 25px;
+    }
+
+
+}
+
+/* End of style.css */
+
