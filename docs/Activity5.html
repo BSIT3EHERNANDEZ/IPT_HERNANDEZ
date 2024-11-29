@@ -1,0 +1,123 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+         body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        /* Style input fields and buttons */
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-weight: bold;
+            color: #333;
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Activity</h1>
+
+        <!-- Section for calculating square and cube -->
+        <h2>Calculate Square and Cube</h2>
+        <label for="singleNumber">Enter a number:</label>
+        <input type="number" id="singleNumber" placeholder="Enter a number">
+        <button onclick="calculateSquareAndCube()">Calculate</button>
+        <p id="squareCubeResult"></p>
+
+        <!-- Section for calculating average of five numbers -->
+        <h2>Calculate Average of Five Numbers</h2>
+        <label>Enter five numbers:</label>
+        <input type="number" id="number1" placeholder="Number 1">
+        <input type="number" id="number2" placeholder="Number 2">
+        <input type="number" id="number3" placeholder="Number 3">
+        <input type="number" id="number4" placeholder="Number 4">
+        <input type="number" id="number5" placeholder="Number 5">
+        <button onclick="calculateAverage()">Calculate Average</button>
+        <p id="averageResult"></p>
+    </div>
+
+    <script>
+        // Function to calculate and display the square and cube of a number
+        function calculateSquareAndCube() {
+            let number = document.getElementById("singleNumber").value;
+            number = Number(number.trim()); // Convert the input to a number
+
+            if (!isNaN(number)) { // Check if input is a valid number
+                let square = number * number;
+                let cube = number * number * number;
+                document.getElementById("squareCubeResult").textContent = 
+                    Square of ${number} is ${square}, Cube is ${cube}.;
+            } else {
+                document.getElementById("squareCubeResult").textContent = 
+                    "Please enter a valid number.";
+            }
+        }
+
+        // Function to calculate the average of five numbers
+        function calculateAverage() {
+            // Get the values from each input field and convert them to numbers
+            let numbersArray = [
+                Number(document.getElementById("number1").value),
+                Number(document.getElementById("number2").value),
+                Number(document.getElementById("number3").value),
+                Number(document.getElementById("number4").value),
+                Number(document.getElementById("number5").value)
+            ];
+
+            // Check if all inputs are valid numbers
+            if (numbersArray.every(num => !isNaN(num))) {
+                let sum = numbersArray.reduce((acc, curr) => acc + curr, 0);
+                let average = sum / numbersArray.length;
+                document.getElementById("averageResult").textContent = 
+                    The average of the entered numbers is: ${average};
+            } else {
+                document.getElementById("averageResult").textContent = 
+                    "Please enter valid numbers in all fields.";
+            }
+        }
+    </script>
+</body>
+</html>
